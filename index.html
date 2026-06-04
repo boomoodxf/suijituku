@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boudoir API Browser</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="view active" id="homeView" aria-label="API 分类首页">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">boudoir.ortlinde.com / random</p>
+            <h1>API 来源分类</h1>
+          </div>
+          <button class="icon-button" id="resampleButton" type="button" aria-label="重新采样" title="重新采样">
+            <span aria-hidden="true">↻</span>
+          </button>
+        </header>
+
+        <section class="summary-strip" aria-label="采样统计">
+          <article>
+            <span id="imageTotal">0</span>
+            <strong>已采样图片</strong>
+          </article>
+          <article>
+            <span id="sourceTotal">0</span>
+            <strong>真实来源分类</strong>
+          </article>
+          <article>
+            <span id="typeTotal">0</span>
+            <strong>图片类型</strong>
+          </article>
+        </section>
+
+        <div class="source-grid" id="sourceGrid"></div>
+        <p class="status" id="homeStatus">正在通过 API 采样来源分类...</p>
+      </section>
+
+      <section class="view" id="sourceView" aria-label="分类下的图片">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow" id="sourceMeta">当前分类</p>
+            <h1 id="sourceTitle">图片</h1>
+          </div>
+          <button class="icon-button" id="homeFromSource" type="button" aria-label="返回首页" title="返回首页">
+            <span aria-hidden="true">⌂</span>
+          </button>
+        </header>
+
+        <div class="gallery-grid" id="imageGrid"></div>
+        <div class="footer-actions">
+          <button class="text-button" id="loadMoreButton" type="button">继续采样这个分类</button>
+        </div>
+      </section>
+
+      <section class="view reader" id="readerView" aria-label="图片查看器">
+        <div class="reader-toolbar">
+          <button class="home-button" id="homeLeft" type="button" aria-label="返回首页" title="返回首页">
+            <span aria-hidden="true">⌂</span>
+          </button>
+          <div class="reader-title">
+            <strong id="readerName">来源分类</strong>
+            <span id="readerCount">1 / 1</span>
+          </div>
+          <button class="home-button" id="homeRight" type="button" aria-label="返回首页" title="返回首页">
+            <span aria-hidden="true">⌂</span>
+          </button>
+        </div>
+
+        <button class="reader-nav reader-nav-left" id="prevImage" type="button" aria-label="上一张图片">‹</button>
+        <figure class="stage" id="stage">
+          <img id="stageImage" alt="" draggable="false" />
+          <figcaption id="stageCaption">左右滑动查看当前分类下的图片</figcaption>
+        </figure>
+        <button class="reader-nav reader-nav-right" id="nextImage" type="button" aria-label="下一张图片">›</button>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
