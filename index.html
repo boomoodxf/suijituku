@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boudoir 随机图集</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="app">
+      <section class="home view active" id="homeView" aria-label="图集首页">
+        <header class="home-header">
+          <div>
+            <p class="eyebrow">boudoir.ortlinde.com</p>
+            <h1>随机图集</h1>
+          </div>
+          <button class="icon-button" id="refreshHome" type="button" aria-label="刷新图集" title="刷新图集">
+            <span aria-hidden="true">↻</span>
+          </button>
+        </header>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <p class="status" id="homeStatus">正在加载图集...</p>
+      </section>
+
+      <section class="reader view" id="readerView" aria-label="图集阅读器">
+        <div class="reader-toolbar">
+          <button class="home-button" id="homeLeft" type="button" aria-label="返回首页" title="返回首页">
+            <span aria-hidden="true">⌂</span>
+          </button>
+          <div class="reader-title">
+            <strong id="readerName">随机图集</strong>
+            <span id="readerCount">1 / 1</span>
+          </div>
+          <button class="home-button" id="homeRight" type="button" aria-label="返回首页" title="返回首页">
+            <span aria-hidden="true">⌂</span>
+          </button>
+        </div>
+
+        <button class="reader-nav reader-nav-left" id="prevImage" type="button" aria-label="上一张图片">‹</button>
+        <figure class="stage" id="stage">
+          <img id="stageImage" alt="" draggable="false" />
+          <figcaption id="stageCaption">上下滑动切换随机合集，左右滑动切换图片</figcaption>
+        </figure>
+        <button class="reader-nav reader-nav-right" id="nextImage" type="button" aria-label="下一张图片">›</button>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
