@@ -8,19 +8,34 @@
   </head>
   <body>
     <main class="app" id="app">
-      <section class="home view active" id="homeView" aria-label="图集首页">
+      <section class="home view active" id="homeView" aria-label="标签首页">
         <header class="home-header">
           <div>
             <p class="eyebrow">boudoir.ortlinde.com</p>
-            <h1>随机图集</h1>
+            <h1>标签</h1>
           </div>
           <button class="icon-button" id="refreshHome" type="button" aria-label="刷新图集" title="刷新图集">
             <span aria-hidden="true">↻</span>
           </button>
         </header>
 
+        <div class="tag-grid" id="tagGrid"></div>
+        <p class="status" id="homeStatus">选择一个标签查看图集。</p>
+      </section>
+
+      <section class="home view" id="tagView" aria-label="标签下的图集">
+        <header class="home-header">
+          <div>
+            <p class="eyebrow" id="tagEyebrow">当前标签</p>
+            <h1 id="tagTitle">图集</h1>
+          </div>
+          <button class="icon-button" id="backToTags" type="button" aria-label="返回标签首页" title="返回标签首页">
+            <span aria-hidden="true">⌂</span>
+          </button>
+        </header>
+
         <div class="gallery-grid" id="galleryGrid"></div>
-        <p class="status" id="homeStatus">正在加载图集...</p>
+        <p class="status" id="tagStatus">正在加载图集...</p>
       </section>
 
       <section class="reader view" id="readerView" aria-label="图集阅读器">
